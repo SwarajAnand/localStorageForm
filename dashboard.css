@@ -1,0 +1,22 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.allBtns{
+    height: 45px;
+    text-align: center;
+    align-items: center;
+    width: 130px;
+    border-radius: 6px;
+    background-color: #627254;
+    color: #DDDDDD;
+    font-size: 15px;
+    border: none;
+}
+
+.allBtns:hover{
+    cursor: pointer;
+    background-color: #76885B;
+    transition: 0.3s ease;
+}

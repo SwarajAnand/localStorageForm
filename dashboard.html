@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./dashboard.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Dashboard</h1>
+
+    <h2>Welcome <span id="userName" class="neon"></span></h2>
+
+    <button id="logout" class="allBtns">Log Out</button>
+
+    <script>
+        document.getElementById("logout").addEventListener('click', () => {
+            localStorage.removeItem('currUser');
+            check();
+        })
+
+        const check = () => {
+            let curr = localStorage.getItem('currUser');
+            curr = JSON.parse(curr);
+            console.log(curr);
+            if (!curr) {
+                window.location.href = './login.html';
+                return;
+            } else {
+                document.getElementById("userName").innerHTML = `${curr.fName} ${curr.lName}`;
+            }
+        }
+
+        window.onload = check;
+    </script>
+</body>
+
+</html>
